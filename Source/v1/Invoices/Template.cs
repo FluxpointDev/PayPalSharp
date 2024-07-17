@@ -37,7 +37,7 @@ namespace PayPal.v1.Invoices
         /// The HATEOS links that enable template actions.
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue = false)]
-        public List<LinkDescriptionObject> Links;
+        public List<InvoiceLinkDescriptionObject> Links;
 
         /// <summary>
         /// The template name.

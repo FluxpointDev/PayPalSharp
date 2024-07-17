@@ -37,7 +37,7 @@ namespace PayPal.v1.Invoices
         /// The HATEOAS links that provide related actions for the templates in the response.
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue = false)]
-        public List<LinkDescriptionObject> Links;
+        public List<InvoiceLinkDescriptionObject> Links;
 
         /// <summary>
         /// List of phone numbers in merchant profile.

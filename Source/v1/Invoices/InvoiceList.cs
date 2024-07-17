@@ -31,7 +31,7 @@ namespace PayPal.v1.Invoices
         /// The HATEOAS links for `next` and `previous` navigation in the result set.
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue = false)]
-        public List<LinkDescriptionObject> Links;
+        public List<InvoiceLinkDescriptionObject> Links;
 
         /// <summary>
         /// The total number of invoices that match the search criteria.

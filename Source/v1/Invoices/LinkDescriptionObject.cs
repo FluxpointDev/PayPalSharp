@@ -14,12 +14,12 @@ namespace PayPal.v1.Invoices
     /// The [HATEOAS links](/docs/api/hateoas-links/) related to the request.
     /// </summary>
     [DataContract]
-    public class LinkDescriptionObject
+    public class InvoiceLinkDescriptionObject : LinkDescriptionObject
     {
         /// <summary>
 	    /// Required default constructor
 		/// </summary>
-        public LinkDescriptionObject() {}
+        public InvoiceLinkDescriptionObject() {}
 
         /// <summary>
         /// The media type in which to submit data in the request.
@@ -28,30 +28,10 @@ namespace PayPal.v1.Invoices
         public string EncType;
 
         /// <summary>
-        /// REQUIRED
-        /// The URL of the related HATEOAS link to use in subsequent calls.
-        /// </summary>
-        [DataMember(Name="href", EmitDefaultValue = false)]
-        public string Href;
-
-        /// <summary>
         /// The media type, as defined by RFC 2046, that describes the link target.
         /// </summary>
         [DataMember(Name="mediaType", EmitDefaultValue = false)]
         public string MediaType;
-
-        /// <summary>
-        /// The HTTP method required for the related call.
-        /// </summary>
-        [DataMember(Name="method", EmitDefaultValue = false)]
-        public string Method;
-
-        /// <summary>
-        /// REQUIRED
-        /// The relation to the target resource of the link. Should be one of the extended link relation types defined by PPaaS in https://ppaas/docs/standards/hypermedia
-        /// </summary>
-        [DataMember(Name="rel", EmitDefaultValue = false)]
-        public string Rel;
 
         /// <summary>
         /// The link title.

@@ -85,7 +85,7 @@ namespace PayPal.v1.Invoices
         /// The HATEOAS links that provide related actions for the invoice based on the current invoice status.
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue = false)]
-        public List<LinkDescriptionObject> Links;
+        public List<InvoiceLinkDescriptionObject> Links;
 
         /// <summary>
         /// The full URL to an external logo image.

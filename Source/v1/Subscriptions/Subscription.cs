@@ -39,7 +39,7 @@ namespace PayPal.v1.Subscriptions
         /// An array of request-related [HATEOAS links](/docs/api/overview/#hateoas-links).
         /// </summary>
         [DataMember(Name = "links", EmitDefaultValue = false)]
-        public List<BillingPlans.LinkDescriptionObject> Links;
+        public List<LinkDescriptionObject> Links;
 
         /// <summary>
         /// The application context experience information.
