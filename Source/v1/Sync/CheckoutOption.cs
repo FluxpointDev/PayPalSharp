@@ -5,7 +5,6 @@
 // @data H4sIAAAAAAAC/6yRwU7jMBCG7/sUI5/das+5Vbvay0oUoYoLQs3UmdYjnNiMbWiE+u7IDSlULSAER4++sf//85Na9IFUpf5YMnc+J5iHxL5TWl2jMK4cXWBbAKXVf+pfD38pGuEBrtQMzHiB388AIyB02NIEu2bygC4TBGSZKq1mItgPD//W6oqwmXeuV9UaXaQyuM8s1BwGl+IDSWKKqro5RI5JuNucJh2TLIckyxLiKP07wHGjhaWTTgXU8GjZWODSz1gUNImEY2IDfg3YASdqNcRsbJFQG++81OAF6kTblIXq7zrosnM7/WUR+0/40MRIfK5iT07hnxegLbbBkYZ0hhvrt7yxCVYE9cplGnQINXWx6ej86qjrzXJsvU/2ZZ1DcNT8jM3b3a9nAAAA//8=
 // DO NOT EDIT
 using System.Runtime.Serialization;
-using System.Collections.Generic;
 
 
 namespace PayPal.v1.Sync

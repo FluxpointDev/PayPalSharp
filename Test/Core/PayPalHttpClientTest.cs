@@ -1,10 +1,7 @@
 ﻿using BraintreeHttp;
-using PayPal.Core;
 using System;
-using System.ComponentModel;
 using System.Net.Http;
 using System.Reflection;
-using WireMock.Logging;
 using WireMock.RequestBuilders;
 using WireMock.ResponseBuilders;
 using WireMock.Server;

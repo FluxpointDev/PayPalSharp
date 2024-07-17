@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using System.Text;
 using System.Net.Http;
 using System.Collections.Generic;

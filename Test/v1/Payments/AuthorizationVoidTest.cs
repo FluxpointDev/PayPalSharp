@@ -1,13 +1,6 @@
-using System;
-using System.IO;
-using System.Text;
-using System.Net.Http;
-using System.Collections.Generic;
 using BraintreeHttp;
 using Xunit;
 using PayPal.Test;
-using System.Runtime.Serialization.Json;
-using static PayPal.Test.TestHarness;
 
 namespace PayPal.v1.Payments.Test
 {

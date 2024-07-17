@@ -1,5 +1,4 @@
-﻿using PayPal.v1.BillingPlans;
-using PayPal.v1.CustomerDisputes;
+﻿using PayPal.v1.CustomerDisputes;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 

@@ -1,8 +1,5 @@
 ﻿using PayPal.v1.Payments;
-using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace PayPal.v1.Subscriptions
 {

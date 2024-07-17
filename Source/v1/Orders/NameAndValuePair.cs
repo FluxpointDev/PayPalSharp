@@ -5,7 +5,6 @@
 // @data H4sIAAAAAAAC/6yQwUoDMRCG7z7FMOe0eM5N8CZokVIQ8TA2Uw1mkziZCEH67pJdrdQVRfCYP5P83zevuG6Z0eIlDQwUHWwoVIYVeUGDGxJP94H7LVpEgxfcPg/nXLbis/oU0eL6kSHSwAuKbvEyfpPJCzhW8qEs0eCZCLWp8dTgNZO7iqGh3VEo3IPn6oXdIVhJyizquaC9PbAWFR8f5ni9/AjxPZhjPnGDXRLQ75GXcJMqDLUobJMIB1IeZ6eRvqb+CrRl/puXSv2iFWsIe/Or29h8JPeRzO0myp/8/gH5bn/yBgAA//8=
 // DO NOT EDIT
 using System.Runtime.Serialization;
-using System.Collections.Generic;
 
 
 namespace PayPal.v1.Orders

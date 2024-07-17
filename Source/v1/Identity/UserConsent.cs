@@ -1,9 +1,3 @@
-using System;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Collections.Generic;
-using BraintreeHttp;
 using PayPal.Core;
 
 namespace PayPal.v1.Identity

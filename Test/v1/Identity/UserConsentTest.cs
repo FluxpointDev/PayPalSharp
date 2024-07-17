@@ -1,13 +1,7 @@
 using System;
-using System.IO;
-using System.Text;
-using System.Net.Http;
-using System.Collections.Generic;
 using BraintreeHttp;
 using Xunit;
 using PayPal.Test;
-using System.Threading.Tasks;
-using PayPal.Core;
 
 namespace PayPal.v1.Identity.Test
 {

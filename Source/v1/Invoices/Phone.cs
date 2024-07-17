@@ -5,7 +5,6 @@
 // @data H4sIAAAAAAAC/8SQQUv7QBDF7/9PMcyp5R+KBfWQW0k9CbVo8SJSNtlpOrCZjbsbcJF+d1lTI20QDx48zrw3bx6/N9zEljDH9d4KYYaPyrEqDa1Uk9aY4S3Fr2FJvnLcBraCOW72BG06BOmaktwMM1w4p2IfepHhPSl9JyZivlPGU1q8dOxID4u1sy25wOQxfxrq+OBY6nGfynYSXNxWVtNJtzNh3PNogEoZw1JDMsKkKKYZKA+adiykoYxwM5tfX84g3TTqlZuugco25YdsSOqwB7uDovgvKsUrA+xhfgWaaw7+twikM+aQ/cjh8/e2B3+CYqyNaQzde883DBbnPqisePbBJwSDpskH7qcj1tWymIISDb4r0+t0ekyYPKymf0v3+fDvHQAA//8=
 // DO NOT EDIT
 using System.Runtime.Serialization;
-using System.Collections.Generic;
 
 
 namespace PayPal.v1.Invoices

@@ -1,6 +1,5 @@
 using System;
 using System.Text;
-using BraintreeHttp;
 
 namespace PayPal.Core
 {

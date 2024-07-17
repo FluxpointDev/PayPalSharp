@@ -5,7 +5,6 @@
 // @data H4sIAAAAAAAC/6RSwWqDQBC99yuGOS+hZ29psy3SYIKxKaWUuOoYFzau3V0LUvLvZaMxSQO95OY8n/PeG98PJl1DGGBMX600BPxbFlTnBB4g65DhWhgpMkWR2HkmMnyh7jTMyOZGNk7qGgOcguk/BKehbQrhCFxFYJ1/0iUIKKRtWkcMsg7CGfNEkq4iA+nbNEzC6HnztIg3D6/vPN7EfLVcRCuegv7zfsXn83PCBJJK2kEor0S9JaDaG7fH/d5I1nZk/DJLSnlMg22znXRAx+il7qmD0QmE5WFORe5TpiAtpL09vg5nPHrkKesZB/XU5zxbMNzBeq3/Io5Cvc5Bhg0xbxO6uhUynBojuv7v3zOMSRSLWnUYlEJZYsdCFCOwNLoh4yRZDD7G3lhnZL29bkkf4aIrI3TZmOQU2GnI9a5R5OhWh3Wr1P5zf/cLAAD//w==
 // DO NOT EDIT
 using System.Runtime.Serialization;
-using System.Collections.Generic;
 
 
 namespace PayPal.v1.CustomerDisputes
