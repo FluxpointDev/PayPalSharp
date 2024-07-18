@@ -4,12 +4,10 @@ using System.IO.Compression;
 using System.IO;
 using System.Net.Http;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net.Http.Json;
 using System.Text.Json;
-using System.Text.Json.Serialization.Metadata;
 using System.Net.Http.Headers;
 
 namespace PayPal.Core

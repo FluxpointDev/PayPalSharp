@@ -1,5 +1,6 @@
 ﻿using PayPal.v1.CustomerDisputes;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace PayPal.v1.Subscriptions
@@ -11,7 +12,7 @@ namespace PayPal.v1.Subscriptions
         public string Id;
 
         [JsonPropertyName("status")]
-        public string Status;
+        public SubscriptionStatusType Status;
 
         [JsonPropertyName("status_update_time")]
         public string StatusUpdateTime;
@@ -45,6 +46,27 @@ namespace PayPal.v1.Subscriptions
         /// </summary>
         [JsonPropertyName("application_context")]
         public SubscriptionApplicationContext ApplicationContext;
+    }
+
+    public enum SubscriptionStatusType
+    {
+        [EnumMember(Value = "APPROVAL_PENDING")]
+        ApprovalPending,
+
+        [EnumMember(Value = "APPROVED")]
+        Approved,
+
+        [EnumMember(Value = "ACTIVE")]
+        Active,
+
+        [EnumMember(Value = "SUSPENDED")]
+        Suspended,
+
+        [EnumMember(Value = "CANCELLED")]
+        Cancelled,
+
+        [EnumMember(Value = "EXPIRED")]
+        Expired,
     }
 
     public class SubscriptionApplicationContext : Orders.ApplicationContext

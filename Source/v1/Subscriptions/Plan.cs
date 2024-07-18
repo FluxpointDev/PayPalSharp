@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
@@ -19,6 +20,12 @@ namespace PayPal.v1.Subscriptions
 
         [JsonPropertyName("status")]
         public PlanStatusType Status;
+
+        [JsonPropertyName("description")]
+        public string Description;
+
+        [JsonPropertyName("billing_cycles")]
+        public List<PlanBillingCycle> BillingCycles;
 
         [JsonPropertyName("create_time")]
         public string CreateTimeFormat;
