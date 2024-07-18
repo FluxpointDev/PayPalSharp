@@ -5,7 +5,7 @@ namespace PayPal.v1
     /// <summary>
     /// The currency and amount for a transaction.
     /// </summary>
-    [DataContract]
+
     public class Currency
     {
         /// <summary>
@@ -16,14 +16,14 @@ namespace PayPal.v1
         /// <summary>
         /// The [three-character ISO-4217 currency code](/docs/integration/direct/rest/currency-codes/). PayPal does not support all currencies.
         /// </summary>
-        [DataMember(Name = "currency", EmitDefaultValue = false)]
+        [DataMember(Name = "currency")]
         public string CurrencyCode;
 
         /// <summary>
         /// REQUIRED
         /// The amount. Includes the specified number of digits after decimal separator for the [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217#Active_codes).
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
+        [DataMember(Name = "value")]
         public string Value;
     }
 }

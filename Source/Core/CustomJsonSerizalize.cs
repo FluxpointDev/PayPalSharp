@@ -1,13 +1,9 @@
 ﻿using BraintreeHttp;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Runtime.Serialization.Json;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace PayPal.Core
 {

@@ -1,7 +1,6 @@
-using System;
-using System.Net;
-using System.Net.Http.Headers;
 using BraintreeHttp;
+using System;
+using System.Net.Http.Headers;
 
 namespace PayPal.Core
 {
@@ -13,7 +12,7 @@ namespace PayPal.Core
 
         public PayPalHttpClient(PayPalEnvironment environment) : this(environment, null)
         {
-            
+
         }
 
         public PayPalHttpClient(PayPalEnvironment environment, string refreshToken) : base(environment)
@@ -49,13 +48,14 @@ namespace PayPal.Core
 
             public void Inject(HttpRequest request)
             {
-                
+
                 if (!request.Headers.Contains("Authorization") && !(request is AccessTokenRequest || request is RefreshTokenRequest))
                 {
                     if (this.accessToken == null || this.accessToken.IsExpired())
                     {
                         var accessTokenResponse = fetchAccessToken();
                         this.accessToken = accessTokenResponse.Result<AccessToken>();
+                        Console.WriteLine("Access: " + this.accessToken.Token);
                     }
                     request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.Token);
                 }

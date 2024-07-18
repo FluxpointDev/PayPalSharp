@@ -9,9 +9,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net.Http.Json;
 using System.Text.Json;
-using System.Dynamic;
-using System.Text.Json.Nodes;
-using System.Text.Json.Serialization;
 
 namespace PayPal.Core
 {
@@ -222,15 +219,16 @@ namespace PayPal.Core
                             byte[] result = content.ReadAsByteArrayAsync().Result;
                             content = new StringContent(CustomEncoder.Gunzip(result), Encoding.UTF8);
                         }
-
-                        responseBody =  await content.ReadFromJsonAsync(req.ResponseType);
+                        responseBody =  await content.ReadFromJsonAsync(req.ResponseType, new JsonSerializerOptions
+                        {
+                            IncludeFields = true,
+                        });
                     }
                     
 
 
                     var TS = System.DateTime.Now - Now;
                     System.Console.WriteLine($"{TS.Seconds}:{TS.Milliseconds}:{TS.Ticks}");
-                    responseBody = Encoder.DeserializeResponse(response.Content, request.ResponseType);
                 }
 
                 return new HttpResponse(response.Headers, response.StatusCode, responseBody);

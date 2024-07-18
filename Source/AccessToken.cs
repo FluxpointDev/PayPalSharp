@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace PayPal.Core
 {
-    [DataContract]
+
     public class AccessToken
     {
-        [DataMember(Name = "access_token")]
+        [JsonPropertyName("access_token")]
         public string Token;
 
-        [DataMember(Name = "token_type")]
+        [JsonPropertyName("token_type")]
         public string TokenType;
 
-        [DataMember(Name = "expires_in")]
+        [JsonPropertyName("expires_in")]
         public int ExpiresIn;
 
+        [JsonIgnore]
         private DateTime createDate;
 
         public AccessToken()

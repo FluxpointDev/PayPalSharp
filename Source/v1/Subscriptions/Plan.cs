@@ -1,25 +1,24 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace PayPal.v1.Subscriptions
 {
-    [DataContract]
+
     public class Plan
     {
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id")]
         public string Id;
 
-        [DataMember(Name = "product_id", EmitDefaultValue = false)]
+        [DataMember(Name = "product_id")]
         public string ProductId;
 
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name")]
         public string Name;
 
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status")]
         public string StatusEnum;
     }
 
-    [DataContract]
+
     public enum PlanStatusType
     {
         [EnumMember(Value = "None")]

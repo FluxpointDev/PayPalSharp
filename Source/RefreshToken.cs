@@ -1,20 +1,20 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace PayPal.Core
 {
-    [DataContract]
+
     public class RefreshToken
     {
-        [DataMember(Name = "refresh_token")]
+        [JsonPropertyName("refresh_token")]
         public string Token;
 
-        [DataMember(Name = "token_type")]
+        [JsonPropertyName("token_type")]
         public string TokenType;
 
-        [DataMember(Name = "expires_in")]
+        [JsonPropertyName("expires_in")]
         public string ExpiresIn;
 
-        [DataMember(Name = "id_token")]
+        [JsonPropertyName("id_token")]
         public string IdToken;
     }
 }

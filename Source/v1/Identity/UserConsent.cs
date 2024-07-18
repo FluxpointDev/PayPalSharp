@@ -3,7 +3,7 @@ using PayPal.Core;
 namespace PayPal.v1.Identity
 {
     public class UserConsent
-    {       
+    {
         private string URL;
 
         public UserConsent(PayPalEnvironment Environment)

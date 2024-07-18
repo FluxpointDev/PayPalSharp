@@ -5,7 +5,7 @@ namespace PayPal.v1
     /// <summary>
     /// A JSON patch object to apply partial updates to resources.
     /// </summary>
-    [DataContract]
+
     public class JsonPatch<T>
     {
         /// <summary>
@@ -16,26 +16,26 @@ namespace PayPal.v1
         /// <summary>
         /// A JSON pointer to the location in the target document from which to move the value. Required for the `move` operation.
         /// </summary>
-        [DataMember(Name = "from", EmitDefaultValue = false)]
+        [DataMember(Name = "from")]
         public string From;
 
         /// <summary>
         /// REQUIRED
         /// The operation to complete.
         /// </summary>
-        [DataMember(Name = "op", EmitDefaultValue = false)]
+        [DataMember(Name = "op")]
         public string Op;
 
         /// <summary>
         /// A JSON pointer to a location in the target document at which to complete the operation.
         /// </summary>
-        [DataMember(Name = "path", EmitDefaultValue = false)]
+        [DataMember(Name = "path")]
         public string Path;
 
         /// <summary>
         /// The value to apply. The `remove` operation does not require a value.
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
+        [DataMember(Name = "value")]
         public T Value;
     }
 }
