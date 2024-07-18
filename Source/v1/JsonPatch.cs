@@ -1,4 +1,4 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace PayPal.v1
 {
@@ -16,26 +16,26 @@ namespace PayPal.v1
         /// <summary>
         /// A JSON pointer to the location in the target document from which to move the value. Required for the `move` operation.
         /// </summary>
-        [DataMember(Name = "from")]
+        [JsonPropertyName("from")]
         public string From;
 
         /// <summary>
         /// REQUIRED
         /// The operation to complete.
         /// </summary>
-        [DataMember(Name = "op")]
+        [JsonPropertyName("op")]
         public string Op;
 
         /// <summary>
         /// A JSON pointer to a location in the target document at which to complete the operation.
         /// </summary>
-        [DataMember(Name = "path")]
+        [JsonPropertyName("path")]
         public string Path;
 
         /// <summary>
         /// The value to apply. The `remove` operation does not require a value.
         /// </summary>
-        [DataMember(Name = "value")]
+        [JsonPropertyName("value")]
         public T Value;
     }
 }

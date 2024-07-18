@@ -1,29 +1,27 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace PayPal.v1.Subscriptions
 {
 
     public class Plan
     {
-        [DataMember(Name = "id")]
+        [JsonPropertyName("id")]
         public string Id;
 
-        [DataMember(Name = "product_id")]
+        [JsonPropertyName("product_id")]
         public string ProductId;
 
-        [DataMember(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name;
 
-        [DataMember(Name = "status")]
-        public string StatusEnum;
+        [JsonPropertyName("status")]
+        public PlanStatusType Status;
     }
-
 
     public enum PlanStatusType
     {
-        [EnumMember(Value = "None")]
-        None,
-
         [EnumMember(Value = "CREATED")]
         Created,
 

@@ -18,13 +18,12 @@ namespace PayPal.Core
         public PayPalHttpClient(PayPalEnvironment environment, string refreshToken) : base(environment)
         {
             this.refreshToken = refreshToken;
-            Console.WriteLine("REGISTER");
-            Encoder.RegisterSerializer(new CustomJsonSerizalize());
             gzipInjector = new GzipInjector();
             authorizationInjector = new AuthorizationInjector(this, environment, refreshToken);
 
             AddInjector(this.gzipInjector);
             AddInjector(this.authorizationInjector);
+
         }
 
         protected override string GetUserAgent()

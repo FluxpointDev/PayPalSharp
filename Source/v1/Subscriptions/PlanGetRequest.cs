@@ -16,6 +16,7 @@ namespace PayPal.v1.Subscriptions
             catch (IOException) { }
 
             this.ContentType = "application/json";
+
         }
 
     }

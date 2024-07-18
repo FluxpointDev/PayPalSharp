@@ -3,6 +3,7 @@
 
 
 
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 
@@ -56,7 +57,7 @@ namespace PayPal.v1.BillingAgreements
         /// The current status of the transaction. Value is:<ul><li>`Completed`. The transaction is complete and the money has been transfered to the payee.</li><li>`Partially_Refunded`. A part of the transaction amount has been refunded to the payer.</li><li>`Pending`. The transaction is pending settlement.</li><li>`Refunded`. The transaction amount has been refunded to the payer.</li><li>`Denied`. The transaction has been denied.</li></ul>
         /// </summary>
         [JsonPropertyName("status")]
-        public string Status;
+        public AgreementTransactionStatusType Status;
 
         /// <summary>
         /// The date and time when the transaction occurred, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
@@ -81,6 +82,24 @@ namespace PayPal.v1.BillingAgreements
         /// </summary>
         [JsonPropertyName("transaction_type")]
         public string TransactionType;
+    }
+
+    public enum AgreementTransactionStatusType
+    {
+        [EnumMember(Value = "Completed")]
+        Completed,
+
+        [EnumMember(Value = "Partially_Refunded")]
+        PartiallyRefunded,
+
+        [EnumMember(Value = "Refunded")]
+        Refunded,
+
+        [EnumMember(Value = "Pending")]
+        Pending,
+
+        [EnumMember(Value = "Denied")]
+        Denied
     }
 }
 
