@@ -3,6 +3,8 @@
 // @version 0.1.0-dev+291f3f
 
 
+using System.Globalization;
+using System;
 using System.Text.Json.Serialization;
 
 namespace PayPal.v1.CustomerDisputes
@@ -34,7 +36,10 @@ namespace PayPal.v1.CustomerDisputes
         /// The date and time, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6). Seconds are required while fractional seconds are optional.<blockquote><strong>Note:</strong> The regular expression provides guidance but does not reject all invalid dates.</blockquote>
         /// </summary>
         [JsonPropertyName("time_posted")]
-        public string TimePosted;
+        public string TimePostedFormat;
+
+        [JsonIgnore]
+        public DateTime TimePostedDate => DateTime.Parse(TimePostedFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
     }
 }
 

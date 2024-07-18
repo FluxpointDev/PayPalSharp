@@ -1,4 +1,6 @@
 ﻿using PayPal.v1.Payments;
+using System.Globalization;
+using System;
 using System.Text.Json.Serialization;
 
 namespace PayPal.v1.Subscriptions
@@ -18,7 +20,10 @@ namespace PayPal.v1.Subscriptions
         public SubscriptionShippingAddress ShippingAddress;
 
         [JsonPropertyName("create_time")]
-        public string CreateTime;
+        public string CreateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime CreatedDate => DateTime.Parse(CreateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
     }
     public class SubscriptionUserName
     {

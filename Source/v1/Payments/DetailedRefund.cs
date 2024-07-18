@@ -3,7 +3,9 @@
 // @version 0.1.0-dev+291f3f
 
 // @data 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
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.Json.Serialization;
 
 
@@ -36,7 +38,10 @@ namespace PayPal.v1.Payments
         /// The date and time when the refund was created, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("create_time")]
-        public string CreateTime;
+        public string CreateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime CreatedDate => DateTime.Parse(CreateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The note to the payer in this transaction.
@@ -114,7 +119,10 @@ namespace PayPal.v1.Payments
         /// The date and time when the resource was last updated, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("update_time")]
-        public string UpdateTime;
+        public string UpdateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime UpdateDate => DateTime.Parse(UpdateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
     }
 }
 

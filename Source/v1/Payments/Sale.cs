@@ -3,7 +3,9 @@
 // @version 0.1.0-dev+291f3f
 
 
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.Json.Serialization;
 
 
@@ -37,14 +39,20 @@ namespace PayPal.v1.Payments
         /// The date and time when the PayPal eCheck transaction is expected to clear, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("clearing_time")]
-        public string ClearingTime;
+        public string ClearingTimeFormat;
+
+        [JsonIgnore]
+        public DateTime ClearingDate => DateTime.Parse(ClearingTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// REQUIRED
         /// The date and time of the sale, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("create_time")]
-        public string CreateTime;
+        public string CreateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime CreatedDate => DateTime.Parse(CreateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The exchange rate for this transaction. Returned only in cross-currency use cases where a merchant bills a buyer in a non-primary currency for that buyer.
@@ -155,7 +163,10 @@ namespace PayPal.v1.Payments
         /// The date and time when the resource was last updated, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("update_time")]
-        public string UpdateTime;
+        public string UpdateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime UpdateDate => DateTime.Parse(UpdateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
     }
 }
 

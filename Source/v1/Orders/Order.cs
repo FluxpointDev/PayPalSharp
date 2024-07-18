@@ -3,7 +3,9 @@
 
 
 
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -31,7 +33,10 @@ namespace PayPal.v1.Orders
         /// The date and time when the resource was created, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("create_time")]
-        public string CreateTime;
+        public string CreateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime CreatedDate => DateTime.Parse(CreateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The ID of the order.
@@ -93,7 +98,10 @@ namespace PayPal.v1.Orders
         /// The date and time when the resource was last updated, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("update_time")]
-        public string UpdateTime;
+        public string UpdateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime UpdateDate => DateTime.Parse(UpdateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
     }
 
     public enum OrderStatusType

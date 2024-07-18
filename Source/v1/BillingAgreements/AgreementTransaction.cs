@@ -3,6 +3,8 @@
 
 
 
+using System.Globalization;
+using System;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -63,7 +65,10 @@ namespace PayPal.v1.BillingAgreements
         /// The date and time when the transaction occurred, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("time_stamp")]
-        public string TimeStamp;
+        public string TimestampFormat;
+
+        [JsonIgnore]
+        public DateTime TimeStampDate => DateTime.Parse(TimestampFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The time zone of the `update_time` field.

@@ -3,6 +3,8 @@
 
 
 
+using System.Globalization;
+using System;
 using System.Text.Json.Serialization;
 
 namespace PayPal.v1.Invoices
@@ -28,7 +30,10 @@ namespace PayPal.v1.Invoices
         /// The date and time when the resource was canceled.
         /// </summary>
         [JsonPropertyName("cancelled_date")]
-        public string CancelledDate;
+        public string CancelledDateFormat;
+
+        [JsonIgnore]
+        public DateTime CancelledDate => DateTime.Parse(CancelledDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The email address of the account that created the resource.
@@ -40,13 +45,19 @@ namespace PayPal.v1.Invoices
         /// The date and time when the resource was created.
         /// </summary>
         [JsonPropertyName("created_date")]
-        public string CreatedDate;
+        public string CreatedDateFormat;
+
+        [JsonIgnore]
+        public DateTime CreatedDate => DateTime.Parse(CreatedDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The date and time when the resource was first sent.
         /// </summary>
         [JsonPropertyName("first_sent_date")]
-        public string FirstSentDate;
+        public string FirstSentDateFormat;
+
+        [JsonIgnore]
+        public DateTime FirstSentDate => DateTime.Parse(FirstSentDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The email address of the account that last sent the resource.
@@ -58,7 +69,10 @@ namespace PayPal.v1.Invoices
         /// The date and time when the resource was last sent.
         /// </summary>
         [JsonPropertyName("last_sent_date")]
-        public string LastSentDate;
+        public string LastSentDateFormat;
+
+        [JsonIgnore]
+        public DateTime LastSentDate => DateTime.Parse(LastSentDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The email address of the account that last edited the resource.
@@ -70,7 +84,10 @@ namespace PayPal.v1.Invoices
         /// The date and time when the resource was last edited.
         /// </summary>
         [JsonPropertyName("last_updated_date")]
-        public string LastUpdatedDate;
+        public string LastUpdatedDateFormat;
+
+        [JsonIgnore]
+        public DateTime LastUpdatedDate => DateTime.Parse(LastUpdatedDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// URL representing the payer's view of the invoice.

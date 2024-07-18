@@ -3,7 +3,9 @@
 
 
 
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.Json.Serialization;
 
 
@@ -112,7 +114,10 @@ namespace PayPal.v1.BillingAgreements
         /// The date and time when the card becomes unusable from the vault, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6). The `valid_until` parameter is not the same as the expiration month and year. The expiration month and year might be later than the `valid_until` date. For example, the card expires in November 2019 but the `valid_until` date is October 17th, 2019.
         /// </summary>
         [JsonPropertyName("valid_until")]
-        public string ValidUntil;
+        public string ValidUntilDateFormat;
+
+        [JsonIgnore]
+        public DateTime ValidUntilDate => DateTime.Parse(ValidUntilDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
     }
 }
 

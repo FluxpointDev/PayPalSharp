@@ -3,6 +3,8 @@
 
 
 
+using System.Globalization;
+using System;
 using System.Text.Json.Serialization;
 
 namespace PayPal.v1.Sync
@@ -28,7 +30,10 @@ namespace PayPal.v1.Sync
         /// The date and time when the auction closes, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("auction_closing_date")]
-        public string AuctionClosingDate;
+        public string AuctionClosingDateFormat;
+
+        [JsonIgnore]
+        public DateTime AuctionClosingDate => DateTime.Parse(AuctionClosingDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The auction site URL.

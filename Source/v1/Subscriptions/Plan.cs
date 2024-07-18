@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -20,7 +21,10 @@ namespace PayPal.v1.Subscriptions
         public PlanStatusType Status;
 
         [JsonPropertyName("create_time")]
-        public string CreateTime;
+        public string CreateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime CreatedDate => DateTime.Parse(CreateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
     }
 
     public enum PlanStatusType

@@ -3,7 +3,9 @@
 
 
 
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.Json.Serialization;
 
 
@@ -30,7 +32,10 @@ namespace PayPal.v1.Vault
         /// The date and time when the vaulted credit card was created, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6). For example, `2017-11-05T13:15:30Z`.
         /// </summary>
         [JsonPropertyName("create_time")]
-        public string CreateTime;
+        public string CreateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime CreatedDate => DateTime.Parse(CreateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// REQUIRED
@@ -118,13 +123,19 @@ namespace PayPal.v1.Vault
         /// The date and time when the vaulted credit card was updated, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6). For example, `2017-11-05T13:15:30Z`.
         /// </summary>
         [JsonPropertyName("update_time")]
-        public string UpdateTime;
+        public string UpdateTimeFormat;
+
+        [JsonIgnore]
+        public DateTime UpdateDate => DateTime.Parse(UpdateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
 
         /// <summary>
         /// The date and time when the credit card becomes unusable from the vault, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6). The `valid_until` parameter is not the same as the expiration month and year. The expiration month and year might be later than the `valid_until` date. For example, the card expires in November 2019 but the `valid_until` date is October 17th, 2019.
         /// </summary>
         [JsonPropertyName("valid_until")]
-        public string ValidUntil;
+        public string ValidUntilDateFormat;
+
+        [JsonIgnore]
+        public DateTime ValidUntilDate => DateTime.Parse(ValidUntilDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
     }
 }
 
