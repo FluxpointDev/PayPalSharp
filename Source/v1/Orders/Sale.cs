@@ -4,6 +4,7 @@
 
 
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 
@@ -48,7 +49,7 @@ namespace PayPal.v1.Orders
         /// The status of the sale transaction.
         /// </summary>
         [JsonPropertyName("status")]
-        public string Status;
+        public SaleStatusType Status;
 
         /// <summary>
         /// The base currency object for all financial value-related fields. For example, balance, payment due, and so on.
@@ -61,6 +62,24 @@ namespace PayPal.v1.Orders
         /// </summary>
         [JsonPropertyName("update_time")]
         public string UpdateTime;
+    }
+
+    public enum SaleStatusType
+    {
+        [EnumMember(Value = "PENDING")]
+        Pending,
+
+        [EnumMember(Value = "COMPLETED")]
+        Completed,
+
+        [EnumMember(Value = "PARTIALLY_REFUNDED")]
+        PartiallyRefunded,
+
+        [EnumMember(Value = "REFUNDED")]
+        Refunded,
+
+        [EnumMember(Value = "DENIED")]
+        Denied,
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace PayPal.v1
 {
@@ -24,7 +25,7 @@ namespace PayPal.v1
         /// The HTTP method required to make the related call.
         /// </summary>
         [JsonPropertyName("method")]
-        public string Method;
+        public LinkMethodType Method;
 
         /// <summary>
         /// REQUIRED
@@ -32,5 +33,32 @@ namespace PayPal.v1
         /// </summary>
         [JsonPropertyName("rel")]
         public string Rel;
+    }
+
+    public enum LinkMethodType
+    {
+        [EnumMember(Value = "GET")]
+        GET,
+
+        [EnumMember(Value = "POST")]
+        POST,
+
+        [EnumMember(Value = "PUT")]
+        PUT,
+
+        [EnumMember(Value = "DELETE")]
+        DELETE,
+
+        [EnumMember(Value = "HEAD")]
+        HEAD,
+
+        [EnumMember(Value = "CONNECT")]
+        CONNECT,
+
+        [EnumMember(Value = "OPTIONS")]
+        OPTIONS,
+
+        [EnumMember(Value = "PATCH")]
+        PATCH,
     }
 }

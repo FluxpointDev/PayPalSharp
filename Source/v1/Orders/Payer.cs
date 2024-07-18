@@ -13,12 +13,12 @@ namespace PayPal.v1.Orders
     /// The payer. The payer funds the payment.
     /// </summary>
 
-    public class Payer
+    public class OrderPayer
     {
         /// <summary>
 	    /// Required default constructor
 		/// </summary>
-        public Payer() { }
+        public OrderPayer() { }
 
         /// <summary>
         /// An array of a single funding instrument for the current payment. Valid only and required for the credit card payment method. The array must include either a `credit_card` or `credit_card_token` object. If the array contains more than one instrument, the payment is declined.
@@ -37,12 +37,6 @@ namespace PayPal.v1.Orders
         /// </summary>
         [JsonPropertyName("payment_method")]
         public string PaymentMethod;
-
-        /// <summary>
-        /// The status of payer's PayPal account.
-        /// </summary>
-        [JsonPropertyName("status")]
-        public string Status;
     }
 }
 

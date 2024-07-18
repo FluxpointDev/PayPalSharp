@@ -18,6 +18,9 @@ namespace PayPal.v1.Subscriptions
 
         [JsonPropertyName("status")]
         public PlanStatusType Status;
+
+        [JsonPropertyName("create_time")]
+        public string CreateTime;
     }
 
     public enum PlanStatusType

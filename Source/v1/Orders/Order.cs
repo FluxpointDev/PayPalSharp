@@ -4,6 +4,7 @@
 
 
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 
@@ -86,13 +87,28 @@ namespace PayPal.v1.Orders
         /// The status of the order. After the customer approves the order, the status is `APPROVED`. After the payment is made for the order and the order completes, the status is `COMPLETED`.
         /// </summary>
         [JsonPropertyName("status")]
-        public string Status;
+        public OrderStatusType Status;
 
         /// <summary>
         /// The date and time when the resource was last updated, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("update_time")]
         public string UpdateTime;
+    }
+
+    public enum OrderStatusType
+    {
+        [EnumMember(Value = "CREATED")]
+        Created,
+
+        [EnumMember(Value = "APPROVED")]
+        Approved,
+
+        [EnumMember(Value = "COMPLETED")]
+        Completed,
+
+        [EnumMember(Value = "FAILED")]
+        Failed,
     }
 }
 

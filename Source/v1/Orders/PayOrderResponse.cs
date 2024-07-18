@@ -4,6 +4,7 @@
 
 
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 
@@ -60,13 +61,43 @@ namespace PayPal.v1.Orders
         /// The status of the order.
         /// </summary>
         [JsonPropertyName("status")]
-        public string Status;
+        public PayOrderStatusType Status;
 
         /// <summary>
         /// The date and time when the resource was last updated, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6).
         /// </summary>
         [JsonPropertyName("update_time")]
         public string UpdateTime;
+    }
+
+    public enum PayOrderStatusType
+    {
+        [EnumMember(Value = "CREATED")]
+        Created,
+
+        [EnumMember(Value = "APPROVED")]
+        Approved,
+
+        [EnumMember(Value = "CANCELED")]
+        Canceled,
+
+        [EnumMember(Value = "COMPLETED")]
+        Completed,
+
+        [EnumMember(Value = "EXPIRED")]
+        Expired,
+
+        [EnumMember(Value = "FAILED")]
+        Failed,
+
+        [EnumMember(Value = "IN_PROGRESS")]
+        InProgress,
+
+        [EnumMember(Value = "PARTIALLY_COMPLETED")]
+        PartiallyCompleted,
+
+        [EnumMember(Value = "SUBMITTED")]
+        Submitted,
     }
 }
 

@@ -29,7 +29,7 @@ namespace PayPal.v1.Orders
         /// The payer. The payer funds the payment.
         /// </summary>
         [JsonPropertyName("payer")]
-        public Payer Payer;
+        public OrderPayer Payer;
     }
 }
 

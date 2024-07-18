@@ -13,12 +13,12 @@ namespace PayPal.v1.Payments
     /// The payer. The payer funds the payment.
     /// </summary>
 
-    public class Payer
+    public class PaymentsPayer
     {
         /// <summary>
 	    /// Required default constructor
 		/// </summary>
-        public Payer() { }
+        public PaymentsPayer() { }
 
         /// <summary>
         /// An array of a single funding instrument for the current payment. Valid only and required for the credit card payment method. The array must include either a `credit_card` or `credit_card_token` object. If the array contains more than one instrument, the payment is declined.

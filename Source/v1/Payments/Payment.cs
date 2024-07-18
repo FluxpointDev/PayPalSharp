@@ -74,7 +74,7 @@ namespace PayPal.v1.Payments
         /// The payer. The payer funds the payment.
         /// </summary>
         [JsonPropertyName("payer")]
-        public Payer Payer;
+        public PaymentsPayer Payer;
 
         /// <summary>
         /// A set of redirect URLs that you provide for PayPal-based payments.

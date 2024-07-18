@@ -4,6 +4,7 @@
 
 
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 
@@ -84,13 +85,31 @@ namespace PayPal.v1.CustomerDisputes
         /// The status of the dispute. Value is:<ul><li><code>OPEN</code>. Open.</li><li><code>WAITING_FOR_BUYER_RESPONSE</code>. The dispute is waiting for a response from the customer.</li><li><code>WAITING_FOR_SELLER_RESPONSE</code>. The dispute is waiting for a response from the merchant.</li><li><code>UNDER_REVIEW</code>. The dispute is under review.</li><li><code>RESOLVED</code>. The dispute is resolved.</li><li><code>OTHER</code>. Another reason.</li></ul>
         /// </summary>
         [JsonPropertyName("status")]
-        public string Status;
+        public DisputeStatusType Status;
 
         /// <summary>
         /// The date and time, in [Internet date and time format](https://tools.ietf.org/html/rfc3339#section-5.6). Seconds are required while fractional seconds are optional.<blockquote><strong>Note:</strong> The regular expression provides guidance but does not reject all invalid dates.</blockquote>
         /// </summary>
         [JsonPropertyName("update_time")]
         public string UpdateTime;
+    }
+
+    public enum DisputeStatusType
+    {
+        [EnumMember(Value = "OPEN")]
+        Open,
+
+        [EnumMember(Value = "WAITING_FOR_BUYER_RESPONSE")]
+        WaitingForBuyerResponse,
+
+        [EnumMember(Value = "UNDER_REVIEW")]
+        UnderReview,
+
+        [EnumMember(Value = "RESOLVED")]
+        Resolved,
+
+        [EnumMember(Value = "OTHER")]
+        Other,
     }
 }
 
