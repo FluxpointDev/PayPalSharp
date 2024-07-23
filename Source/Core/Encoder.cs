@@ -125,7 +125,6 @@ namespace PayPal.Core
                 object responseBody = null;
                 if (response.Content.Headers.ContentType != null)
                 {
-                    System.DateTime Now = System.DateTime.Now;
                     if (response.Content.Headers.ContentType.MediaType == "application/json")
                     {
                         HttpContent content = response.Content;
@@ -140,9 +139,6 @@ namespace PayPal.Core
                     else
                         responseBody = Encoder.DeserializeResponse(response.Content, req.ResponseType);
 
-
-                    var TS = System.DateTime.Now - Now;
-                    System.Console.WriteLine($"{TS.Seconds}:{TS.Milliseconds}:{TS.Ticks}");
                 }
 
                 return new HttpResponse(response.Headers, response.StatusCode, responseBody);
