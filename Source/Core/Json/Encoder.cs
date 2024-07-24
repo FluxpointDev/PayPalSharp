@@ -20,7 +20,7 @@ namespace PayPal.Core
 
         private List<IInjector> injectors;
 
-        public BraintreeHttp.Encoder Encoder { get; }
+        internal BraintreeHttp.Encoder Encoder { get; }
 
         private JsonSerializerOptions Serializer;
 

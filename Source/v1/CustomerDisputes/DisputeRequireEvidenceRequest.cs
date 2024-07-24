@@ -1,7 +1,7 @@
 
 
 // @version 0.1.0-dev+291f3f
-// @type request
+
 
 using BraintreeHttp;
 using System;

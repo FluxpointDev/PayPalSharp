@@ -1,7 +1,7 @@
 
 
 
-// @type request
+
 
 using BraintreeHttp;
 using System.Net.Http;

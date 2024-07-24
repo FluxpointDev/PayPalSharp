@@ -1,7 +1,7 @@
 // This class was generated on Mon, 09 Apr 2018 18:07:49 UTC by version 0.1.0-dev+291f3f
 
 // @version 0.1.0-dev+291f3f
-// @type request
+
 
 using BraintreeHttp;
 using System;
