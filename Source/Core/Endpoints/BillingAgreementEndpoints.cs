@@ -1,7 +1,6 @@
 ﻿using BraintreeHttp;
 using PayPal.v1;
 using PayPal.v1.BillingAgreements;
-using PayPal.v1.Subscriptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,15 +16,9 @@ namespace PayPal.Core
 
         }
 
-        public async Task<HttpResponse> GetPlanAsync(string planId)
-        {
-            HttpRequest Req = new HttpRequest($"/v1/billing/plans/{Uri.EscapeDataString(planId)}?", HttpMethod.Get, typeof(Plan))
-            {
-                ContentType = "application/json",
-            };
+        public AgreementBillBalanceRequest BillBalanceRequest(string AgreementId) => new AgreementBillBalanceRequest(AgreementId);
 
-            return await Client.Execute(Req);
-        }
+        public AgreementCancelRequest CancelBillingRequest(string AgreementId) => new AgreementCancelRequest(AgreementId);
     }
 
     /// <summary>
@@ -73,6 +66,7 @@ namespace PayPal.Core
             return this;
         }
     }
+
 
     /// <summary>
     /// Creates a billing agreement. In the JSON request body, include an `agreement` object with the name, description, start date, ID of the plan on which to base the agreement, and customer and shipping address information.

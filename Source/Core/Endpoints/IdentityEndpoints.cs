@@ -1,8 +1,8 @@
 ﻿using BraintreeHttp;
+using PayPal.v1.Identity;
 using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PayPal.Core
@@ -14,14 +14,29 @@ namespace PayPal.Core
 
         }
 
-        public async Task<HttpResponse> GetPlanAsync(string planId)
-        {
-            HttpRequest Req = new HttpRequest($"/v1/billing/plans/{Uri.EscapeDataString(planId)}?", HttpMethod.Get, typeof(Plan))
-            {
-                ContentType = "application/json",
-            };
+    }
 
-            return await Client.Execute(Req);
+    /// <summary>
+    /// Shows user details.<blockquote><strong>Note:</strong> This API is deprecated. Use `v1/oauth2/token/userinfo` instead.</blockquote>
+    /// </summary>
+    public class UserinfoGetRequest : HttpRequest
+    {
+        public UserinfoGetRequest() : base("/v1/identity/openidconnect/userinfo?", HttpMethod.Get, typeof(UserInfo))
+        {
+
         }
+
+        public UserinfoGetRequest Schema(string Schema)
+        {
+            var strParams = Convert.ToString(Schema);
+            try
+            {
+                this.Path = $"{this.Path}schema={Uri.EscapeDataString(strParams)}&";
+            }
+            catch (IOException) { }
+            return this;
+        }
+
+
     }
 }
